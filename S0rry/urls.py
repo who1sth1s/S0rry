@@ -20,6 +20,7 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^blog/', 'blog.views.index'),
-    url(r'^blog/page/(?P<page>d+)', 'blog.views.index'),
+    url(r'^blog/$', 'blog.views.index'),
+    url(r'^blog/page/(?P<page>[0-9]+)/$', 'blog.views.index'),
+    url(r'^blog/entry/(?P<entry_id>[0-9]+)/$', 'blog.views.read'),
 ]
